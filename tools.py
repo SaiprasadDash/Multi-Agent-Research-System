@@ -5,7 +5,7 @@ from tavily import TavilyClient
 from langchain_ollama import ChatOllama
 import os
 from dotenv import load_dotenv
-from rich import print
+# from rich import print
 load_dotenv()
 
 tavily_client  = TavilyClient(api_key=os.getenv("TAVILY_API_KEY"))
@@ -87,4 +87,4 @@ def scrap_url(url: str) -> str:
     return cleaned_text
 
 result = scrap_url.invoke("https://en.wikipedia.org/wiki/Real_Madrid_CF")
-print(result)
+# print(result)

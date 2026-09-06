@@ -1,10 +1,9 @@
-from langchain import create_agent
-from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_ollama import ChatOllama
+from langchain.agents import create_agent
+from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from tools import web_search, scrap_url
-import os
+from tools import web_search , scrap_url 
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -19,7 +18,7 @@ def build_search_agent():
     )
 
 # 2nd agent
-def build_search_reader_agent():
+def build_reader_agent ():
     return create_agent(
         model = llm,
         tools = [scrap_url],
